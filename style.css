@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    user-select:none;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#fdfbfb,#ebedee);
+    text-align:center;
+    transition:.4s;
+}
+
+body.dark{
+    background:#121212;
+    color:#eee;
+}
+
+.hidden{display:none}
+
+/* LOCK SCREEN */
+.lock-screen{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.lock-screen input{
+    padding:10px;
+    margin:10px;
+    width:220px;
+    border-radius:8px;
+    border:1px solid #aaa;
+}
+
+.lock-screen button{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#333;
+    color:#fff;
+    cursor:pointer;
+}
+
+.lock-screen #error{
+    color:red;
+    display:none;
+    margin-top:10px;
+}
+
+.dark-btn{
+    position:fixed;
+    top:15px;
+    right:15px;
+    border:none;
+    font-size:18px;
+    padding:8px 12px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.gallery{
+    max-width:1100px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+}
+
+@media(min-width:768px){
+    .gallery{
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
+}
+
+.photo{
+    position:relative;
+    opacity:0;
+    transform:translateY(50px) scale(.95);
+    background:#fff;
+    padding:12px;
+    border-radius:20px;
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+    transition:.7s;
+    cursor:pointer;
+}
+
+.photo.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+.photo::after{
+    content:"Private Family Album";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,.35);
+    font-size:20px;
+    transform:rotate(-25deg);
+    pointer-events:none;
+}
+
+.photo img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:16px;
+}
+
+/* Lightbox */
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+}

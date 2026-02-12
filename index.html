@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Family Album</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen" class="lock-screen">
+    <h2>🔒 Private Family Album</h2>
+    <p>Enter password to continue</p>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="unlock()">Unlock</button>
+    <p id="error">Wrong password</p>
+</div>
+
+<!-- ALBUM -->
+<div id="album" class="hidden">
+
+<button class="dark-btn" onclick="toggleDark()">🌙</button>
+
+<h1>👨‍👩‍👧‍👦 My Family Album</h1>
+<p class="subtitle">Our love, our memories ❤️</p>
+
+<div class="gallery">
+
+<div class="card">
+<h3>My Heart Outside My Body 💕</h3>
+<div class="photo"><img src="my child photo .jpeg"></div>
+</div>
+
+<div class="card">
+<h3>Not Just Sister, My Strength</h3>
+<div class="photo"><img src="me and my sister .jpeg"></div>
+</div>
+
+<div class="card">
+<h3>My World</h3>
+<div class="photo"><img src="my father and mother .jpeg"></div>
+</div>
+
+<div class="card">
+<h3>Two Generations, One Bond</h3>
+<div class="photo"><img src="my sister and me child photo .jpeg"></div>
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+<img id="lightboxImg">
+</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
